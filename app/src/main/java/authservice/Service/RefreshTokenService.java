@@ -5,6 +5,7 @@ import authservice.Entities.User;
 import authservice.Repository.RefreshTokenRepo;
 import authservice.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -23,7 +24,7 @@ public class RefreshTokenService {
         RefreshToken refreshToken = RefreshToken.builder()
                 .user(user)
                 .token(UUID.randomUUID().toString())
-                .tokenExpire(Instant.now().plusMillis(600000)) // expire of refresh token is last longer then jwt
+                .tokenExpire(Instant.now().plusMillis(600000)) // expiry of refresh token is last longer then jwt
                 .build();
         return refreshTokenRepo.save(refreshToken);
     }
@@ -34,7 +35,7 @@ public class RefreshTokenService {
         //false if there is some time left for Token expire (difference is poss)
         if (token.getTokenExpire().compareTo(Instant.now())<0){
             refreshTokenRepo.delete(token);
-            throw  new RuntimeException(token.getToken() + "Refresh token is expire please login again..");
+            throw  new InvalidTokenException(token.getToken() + "Refresh token is expire please login again..");
         }
         // if not expire return it //
         return token;

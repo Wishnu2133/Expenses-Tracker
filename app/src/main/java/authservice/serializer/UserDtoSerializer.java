@@ -13,8 +13,7 @@ public class UserDtoSerializer implements Serializer<UserEvent> {
         try {
             return objectMapper.writeValueAsBytes(data);
         }catch (Exception ex) {
-            ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeException(ex.getMessage());
         }
     }
 

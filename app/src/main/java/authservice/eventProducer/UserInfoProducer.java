@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserInfoProducer {
 
-    private final KafkaTemplate<String , UserEvent> kafkaTemplate;
+    private final KafkaTemplate<String,UserEvent> kafkaTemplate;
 
     @Value("${spring.kafka.topic.name}")
     private String TOPIC_NAME;
@@ -21,12 +21,16 @@ public class UserInfoProducer {
     }
 
     public void sendEvent(UserEvent userEvent){
-        // Produce a message to publish in particular Topic with Info(payload)
-        // setHeader : by using Header Broker store message base on particular name
-        Message<UserEvent> message = MessageBuilder.withPayload(userEvent)
-                .setHeader(KafkaHeaders.TOPIC,TOPIC_NAME).build();
 
-        kafkaTemplate.send(message);
+        try {
+            // Produce a message to publish in particular Topic with Info(payload)
+            // setHeader : by using Header Broker store message base on particular name
+            Message<UserEvent> message = MessageBuilder.withPayload(userEvent)
+                    .setHeader(KafkaHeaders.TOPIC,TOPIC_NAME).build();
+            kafkaTemplate.send(message);
+        }catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
 

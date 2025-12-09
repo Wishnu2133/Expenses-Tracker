@@ -25,7 +25,8 @@ import java.util.UUID;
 @Data
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired UserRepo userRepo;
+    @Autowired
+    private UserRepo userRepo;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -45,8 +46,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public User userPresent(UserDto userDto){
         return userRepo.findByUsername(userDto.getUsername());
     }
-//method call when user try to Signup
-    public Boolean signUp(UserDto userDto){
+
+    public Boolean signUp(UserDto userDto){ //method call when user try to Signup //
         // This condition is true when user is already present
         // nonNull() : return true if present , return false if not present
         if(Objects.nonNull(userPresent(userDto))){
@@ -54,8 +55,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             return false;
         }
 
-        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
         String userId = UUID.randomUUID().toString();
+        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
         userRepo.save(new User(userId , userDto.getUsername() , userDto.getPassword() , new HashSet<>()));
         userInfoProducer.sendEvent(userEventPublish(userDto , userId));
         return  true;

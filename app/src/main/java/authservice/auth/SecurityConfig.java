@@ -28,7 +28,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Builder
 public class SecurityConfig {
 
-    @Autowired
+
     private final PasswordEncoder passwordEncoder;
 
     @Autowired

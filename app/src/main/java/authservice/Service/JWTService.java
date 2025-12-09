@@ -1,14 +1,18 @@
 package authservice.Service;
 
+import authservice.models.UserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.NonNull;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.security.Key;
+import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,14 +20,22 @@ import java.util.function.Function;
 
 @Service
 public class JWTService {
-    private  static  final String SECRET = "RXhwZW5zZVRyYWNrZXJKd3RTZWNyZXRLZXkxMjM0NTY3ODkw";
+
+    @Value("${jwt.secret.key}")
+    private String SECRET;
+
+    @Autowired
+    private UserDto userDto;
 
     // 1. make Instance of secret key ,so we can use for create Token
-    private Key getSignKey(){
+    private SecretKey getSignKey(){
+
+        SecretKey secretKey;
         // Decode the Secret key using decoder method
         byte[] keyByte = Decoders.BASE64.decode(SECRET);
         // Creates a new SecretKey instance for use with HMAC-SHA(HS256) algorithms from keyByte //
-        return Keys.hmacShaKeyFor(keyByte);
+        secretKey = Keys.hmacShaKeyFor(keyByte);
+        return secretKey;
     }
 
     // extract claim from jwt token
@@ -36,7 +48,7 @@ public class JWTService {
     }
 
     // <T> generic return type(you can return any type) , Function<Input Type , return Type>
-    public <T> T extractClaim(String token , Function<Claims ,T> claimsResolver){
+    public <T> T extractClaim(String token , @NonNull Function<Claims ,T> claimsResolver){
         final Claims claims = extractAllClaim(token); //extract all claim like username , expire , signature
         return claimsResolver.apply(claims);
     }
@@ -66,13 +78,16 @@ public class JWTService {
                 .setClaims(claims) //all Claims include in JWT
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis())) // current creation time
-                .setExpiration(new Date(System.currentTimeMillis()+1000*60)) // expire time set has after 60min
+                .setExpiration(new Date(System.currentTimeMillis()+1000*60*60)) // expire time set has after 60min
                 .signWith(getSignKey() , SignatureAlgorithm.HS256) // Encode with HS256 hashing Algo
-                .compact(); // Compact this all thing in one String
+                .toString(); // Compact this all thing in one String
     }
 
     public String GenerateToken(String username){
         Map<String, Object> claims = new HashMap<>();
+        claims.put("username" , userDto.getUsername());
+        claims.put("userId",userDto.getUserId());
+        claims.put("email" , userDto.getEmailId());
         return createToken(claims, username);
     }
 
