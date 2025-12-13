@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -22,7 +23,7 @@ import java.io.IOException;
 @NoArgsConstructor
 @AllArgsConstructor
 public class JwtAuthFilter extends OncePerRequestFilter {
-    // OncePerRequest : it ensure that filter run only once for per Request
+    // OncePerRequest : it ensured that filter run only once for per Request
 
     @Autowired
     private JWTService jwtService;
@@ -32,8 +33,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     @Override
     public void doFilterInternal(HttpServletRequest request,
-                                 HttpServletResponse response,
-                                 FilterChain filterChain)
+                                 @NonNull HttpServletResponse response,
+                                 @NonNull FilterChain filterChain)
             throws ServletException, IOException {
         String authHeader = request.getHeader("Authorization");
         String token = null;
