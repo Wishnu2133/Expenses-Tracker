@@ -7,6 +7,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,8 +25,11 @@ public class JWTService {
     @Value("${jwt.secret.key}")
     private String SECRET;
 
-    @Autowired
     private UserDto userDto;
+
+    JWTService(UserDto userDto){
+        this.userDto = userDto;
+    }
 
     // 1. make Instance of secret key ,so we can use for create Token
     private SecretKey getSignKey(){
