@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17-jre
 WORKDIR /app
-COPY app/build/libs/app.jar app.jar
-EXPOSE 8081
-CMD ["java" , "-jar" , "app.jar"]
+COPY build/libs/user-service-0.0.1-SNAPSHOT.jar user-service-0.0.1-SNAPSHOT.jar
+EXPOSE 1906
+CMD ["java" , "-jar" , "user-service-0.0.1-SNAPSHOT.jar"]
