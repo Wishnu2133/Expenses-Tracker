@@ -16,6 +16,7 @@
     <bytecodeTargetLevel target="17" />
   </component>
   <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="AuthService.app" options="-parameters" />
       <module name="AuthService.app.main" options="-parameters" />
