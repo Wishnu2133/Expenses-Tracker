@@ -9,6 +9,8 @@
         </processorPath>
         <module name="AuthService.app.test" />
         <module name="AuthService.app.main" />
+        <module name="user-service.test" />
+        <module name="user-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
