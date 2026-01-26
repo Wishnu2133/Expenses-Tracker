@@ -28,7 +28,7 @@ public class AuthController {
 
 
     @PostMapping("/auth/v1/signup")
-    public ResponseEntity Signup(@RequestBody UserDto userDto){
+    public ResponseEntity<?> Signup(@RequestBody UserDto userDto){
         try {
             Boolean isSignUp = userDetailsServiceImpl.signUp(userDto);
             if (!isSignUp) {
