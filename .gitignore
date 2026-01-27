@@ -13,11 +13,12 @@ build/
 .springBeans
 .sts4-cache
 bin/
-auth-service/bin
-auth-service/.classpath
 auth-service/.project
 .classpath
 .project
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+
+# Ignore Gradle build output directory
+build
