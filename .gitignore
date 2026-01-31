@@ -1,21 +1,20 @@
 .gradle
 build/
+.vscode
+.settings
+.idea
+.classpath
+.project
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### STS ###
 .apt_generated
-.classpath
 .factorypath
-.project
-.settings
 .springBeans
 .sts4-cache
 bin/
-auth-service/.project
-.classpath
-.project
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
