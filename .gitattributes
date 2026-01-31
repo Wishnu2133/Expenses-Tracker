@@ -1,6 +1,3 @@
-/gradlew text eol=lf
-*.bat text eol=crlf
-*.jar binary
 #
 # https://help.github.com/articles/dealing-with-line-endings/
 #
