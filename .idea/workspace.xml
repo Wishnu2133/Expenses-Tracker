@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4e939cd-0c1b-4a49-a6d9-0be0a6faf663" name="Changes" comment="changes">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AndroidProjectSystem.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.jdt.apt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Controller/TokenController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Entities/RefreshToken$RefreshTokenBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Entities/RefreshToken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Entities/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Entities/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Repository/RefreshTokenRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Repository/UserRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Request/AuthRequestDto$AuthRequestDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Request/AuthRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Request/RefreshTokenRequestDto$RefreshTokenRequestDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Request/RefreshTokenRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Response/JwtResponseDto$JwtResponseDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Response/JwtResponseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Service/CustomUserDetails.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Service/JWTService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Service/RefreshTokenService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/Service/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/auth/JwtAuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/auth/SecurityConfig$SecurityConfigBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/auth/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/auth/UserConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/eventProducer/UserInfoProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/models/UserDto$UserDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/models/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/models/UserEvent$UserEventBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/models/UserEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/authservice/serializer/UserDtoSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/test/authservice/AppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Controller/TokenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Entities/RefreshToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Entities/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Entities/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Repository/RefreshTokenRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Repository/UserRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Request/AuthRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Request/RefreshTokenRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Response/JwtResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Service/CustomUserDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Service/JWTService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Service/RefreshTokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/Service/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/auth/JwtAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/auth/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/auth/UserConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/eventProducer/UserInfoProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/models/UserDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/models/UserEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/authservice/serializer/UserDtoSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/authservice/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/UserServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/consumer/AuthConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/deSerializer/UserDtoDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/entities/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/entities/UserInfoDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/userService/user_service/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/userService/user_service/UserServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "expense-Service"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
