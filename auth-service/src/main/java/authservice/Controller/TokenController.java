@@ -32,7 +32,7 @@ public class TokenController {
     private JWTService jwtService;
 
     @PostMapping("auth/v1/login")
-    public ResponseEntity login(@RequestBody AuthRequestDto authRequestDto){
+    public ResponseEntity<?> login(@RequestBody AuthRequestDto authRequestDto){
 
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequestDto.getUsername() , authRequestDto.getPassword()));
             if (authentication.isAuthenticated()) {
