@@ -115,7 +115,6 @@ Each service runs in a dedicated **Docker container**:
 docker build -t auth-service .
 docker build -t user-service .
 docker build -t expense-service .
-docker build -t deserialize-service .
 
 # run kafka + services
 docker-compose up
