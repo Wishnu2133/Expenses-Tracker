@@ -6,3 +6,7 @@
  */
 
 rootProject.name = "Expenses-Tracker"
+
+include("auth-service")
+include("expense-service")
+include("user-service")
