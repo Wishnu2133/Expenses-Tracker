@@ -2,7 +2,7 @@
 build/
 .vscode
 .settings
-.idea
+.idea/
 .classpath
 .project
 !gradle/wrapper/gradle-wrapper.jar
