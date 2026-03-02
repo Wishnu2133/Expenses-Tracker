@@ -17,7 +17,9 @@ build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
+auth-service/.env
+expense-service/.env
+user-service/.env
 
 # Ignore Gradle build output directory
 build
