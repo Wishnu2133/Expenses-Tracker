@@ -35,7 +35,7 @@ services:
     restart: unless-stopped
 
   auth-service:
-    image: wishnu3594/auth-service:1.0.0
+    image: wishnu3594/auth-service:1.0.1
     expose:
       - "8081"
     environment:
@@ -52,7 +52,7 @@ services:
     restart: unless-stopped
 
   user-service:
-    image: wishnu3594/user-service:1.0.0
+    image: wishnu3594/user-service:1.0.1
     expose:
       - "1906"
     environment:
@@ -69,7 +69,7 @@ services:
     restart: unless-stopped
 
   expense-service:
-    image: wishnu3594/expense-service:1.0.0
+    image: wishnu3594/expense-service:1.0.1
     expose:
       - "2704"
     environment:
