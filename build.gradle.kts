@@ -9,3 +9,15 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+
+subprojects {
+
+    // apply java plugin to all modules
+    apply(plugin = "java")
+
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
+
+}

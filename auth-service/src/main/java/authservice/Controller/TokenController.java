@@ -6,7 +6,6 @@ import authservice.Request.RefreshTokenRequestDto;
 import authservice.Response.JwtResponseDto;
 import authservice.Service.JWTService;
 import authservice.Service.RefreshTokenService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,19 +18,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping
+@RequestMapping("/auth/v1")
 public class TokenController {
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
+    private final RefreshTokenService refreshTokenService;
+    private final JWTService jwtService;
 
-    @Autowired
-    private RefreshTokenService refreshTokenService;
+    public TokenController(AuthenticationManager authenticationManager, RefreshTokenService refreshTokenService, JWTService jwtService) {
+        this.authenticationManager = authenticationManager;
+        this.refreshTokenService = refreshTokenService;
+        this.jwtService = jwtService;
+    }
 
-    @Autowired
-    private JWTService jwtService;
-
-    @PostMapping("auth/v1/login")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AuthRequestDto authRequestDto){
 
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequestDto.getUsername() , authRequestDto.getPassword()));
@@ -46,7 +46,7 @@ public class TokenController {
         }
     }
 
-    @PostMapping("auth/v1/refreshToken")
+    @PostMapping("/refreshToken")
     public JwtResponseDto refreshToken(@RequestBody RefreshTokenRequestDto refreshTokenRequestDto){
          return refreshTokenService.findByToken(refreshTokenRequestDto.getToken())
                 .map(refreshTokenService::verifyExpire)

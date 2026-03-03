@@ -23,7 +23,7 @@ public class JWTService {
     @Value("${jwt.secret.key}")
     private String SECRET;
 
-    private UserDto userDto;
+    private final UserDto userDto;
 
     JWTService(UserDto userDto){
         this.userDto = userDto;

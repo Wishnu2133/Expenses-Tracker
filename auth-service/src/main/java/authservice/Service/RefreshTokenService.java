@@ -15,10 +15,15 @@ import java.util.UUID;
 @Service
 public class RefreshTokenService {
 
-    @Autowired RefreshTokenRepo refreshTokenRepo;
+    private final RefreshTokenRepo refreshTokenRepo;
+    private final UserRepo userRepo;
 
-    @Autowired UserRepo userRepo;
-//create refresh token by finding user by id and in to token and expire.
+    public RefreshTokenService(RefreshTokenRepo refreshTokenRepo, UserRepo userRepo) {
+        this.refreshTokenRepo = refreshTokenRepo;
+        this.userRepo = userRepo;
+    }
+
+    //create refresh token by finding user by id and in to token and expire.
     public RefreshToken createRefreshToken(String userName){
         User user = userRepo.findByUsername(userName);
         RefreshToken refreshToken = RefreshToken.builder()

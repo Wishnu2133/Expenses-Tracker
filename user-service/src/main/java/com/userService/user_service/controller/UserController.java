@@ -5,18 +5,20 @@ import com.userService.user_service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/user/v1")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
 
-    @PostMapping("/user/v1/createUpdate")
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping("/createUpdate")
     public ResponseEntity<UserInfoDto> createUpdate(@RequestBody UserInfoDto userInfoDto){
         try {
 
@@ -28,7 +30,7 @@ public class UserController {
         }
     }
 
-    @GetMapping(value = "/user/v1/getUser")
+    @GetMapping(value = "/getUser")
     public ResponseEntity<UserInfoDto> getUser(UserInfoDto userInfoDto){
         try {
             UserInfoDto user = userService.getUser(userInfoDto);

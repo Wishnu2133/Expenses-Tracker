@@ -11,23 +11,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 // AuthController for When user Signup First Time
 @RestController
+@RequestMapping("/auth/v1")
 public class AuthController {
 
-    @Autowired
-    private JWTService jwtService;
+    private final JWTService jwtService;
+    private final RefreshTokenService refreshTokenService;
+    private final UserDetailsServiceImpl userDetailsServiceImpl;
 
-    @Autowired
-    private RefreshTokenService refreshTokenService;
+    public AuthController(JWTService jwtService, RefreshTokenService refreshTokenService, UserDetailsServiceImpl userDetailsServiceImpl) {
+        this.jwtService = jwtService;
+        this.refreshTokenService = refreshTokenService;
+        this.userDetailsServiceImpl = userDetailsServiceImpl;
+    }
 
-    @Autowired
-    private UserDetailsServiceImpl userDetailsServiceImpl;
-
-
-    @PostMapping("/auth/v1/signup")
+    @PostMapping("/signup")
     public ResponseEntity<?> Signup(@RequestBody UserDto userDto){
         try {
             Boolean isSignUp = userDetailsServiceImpl.signUp(userDto);

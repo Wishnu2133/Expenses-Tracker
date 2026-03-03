@@ -1,0 +1,23 @@
+_format_version: "2.1"
+
+services:
+  - name: auth-service
+    url: http://auth-service:8081
+    routes:
+      - name: auth-route
+        paths:
+          - /auth/v1
+
+  - name: user-service
+    url: http://user-service:1906
+    routes:
+      - name: user-route
+        paths:
+          - /user/v1
+
+  - name: expense-service
+    url: http://expense-service:2704
+    routes:
+      - name: expense-service
+        paths:
+          - /expense/v1

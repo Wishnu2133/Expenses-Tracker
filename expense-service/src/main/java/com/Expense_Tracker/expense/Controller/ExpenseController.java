@@ -12,6 +12,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @RestController
+@RequestMapping("/expense/v1")
 public class ExpenseController {
 
     private final ExpenseService expenseService;
@@ -20,7 +21,7 @@ public class ExpenseController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping("/expense/v1/{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<List<ExpenseDto>> getExpense(@PathParam("user_id") @Nullable String userId){
         try{
             List<ExpenseDto> expenseDtoList = expenseService.getExpense(userId);
@@ -39,7 +40,7 @@ public class ExpenseController {
         }
     }
 
-    @PatchMapping("/expense/v1/")
+    @PatchMapping("/update")
     public Boolean updateExpense(@RequestBody ExpenseDto expenseDto){
         try{
             return expenseService.updateExpense(expenseDto);
@@ -48,7 +49,7 @@ public class ExpenseController {
         }
     }
 
-    @GetMapping("/expense/v1/list")
+    @GetMapping("/all")
     public ResponseEntity<List<ExpenseDto>> getByTimeBetween(@RequestBody ExpenseDto expenseDto){
         try {
             List<ExpenseDto> expenseByTime = expenseService.getByTimeBetween(expenseDto);

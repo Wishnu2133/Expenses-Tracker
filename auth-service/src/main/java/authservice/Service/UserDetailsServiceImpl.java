@@ -25,14 +25,13 @@ import java.util.UUID;
 @Data
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
     private UserRepo userRepo;
-
-    @Autowired
     private PasswordEncoder passwordEncoder;
-
-    @Autowired
     private UserInfoProducer userInfoProducer;
+
+    public UserDetailsServiceImpl(UserRepo userRepo) {
+        this.userRepo = userRepo;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

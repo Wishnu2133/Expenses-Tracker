@@ -1,20 +1,25 @@
 package com.userService.user_service.consumer;
 
-import com.userService.user_service.entities.UserInfo;
 import com.userService.user_service.entities.UserInfoDto;
 import com.userService.user_service.repository.UserRepository;
 import com.userService.user_service.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.logging.Logger;
+
 @Service
 public class AuthConsumer {
 
-    @Autowired
-    private UserService userService;
+    private static final Logger logger = Logger.getLogger(AuthConsumer.class.getName());
+
+    private final UserService userService;
+
+    public AuthConsumer(UserService userService) {
+        this.userService = userService;
+    }
 
     @KafkaListener(topics = "${spring.kafka.topic.name}" , groupId = "${spring.kafka.consumer.group-id}")
     public void listen(UserInfoDto eventData){
@@ -25,7 +30,7 @@ public class AuthConsumer {
         try{
             userService.createOrUpdate(eventData);
         }catch(Exception e){
-            e.printStackTrace();
+            logger.config(e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
     }
