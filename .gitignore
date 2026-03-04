@@ -2,7 +2,6 @@
 build/
 .vscode
 .settings
-.env
 .idea/
 .classpath
 .project
@@ -15,6 +14,7 @@ build/
 .factorypath
 .springBeans
 .sts4-cache
+.env
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
