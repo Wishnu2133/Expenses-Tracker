@@ -1,22 +1,22 @@
 services:
   zookeeper:
     image: zookeeper:3.9
-    environment:
-      ZOO_TICK_TIME: 2000
     networks:
       - microservice-net
+    environment:
+      ZOO_TICK_TIME: 2000
     ports:
       - '2181:2181'
     restart: unless-stopped
 
   kafka:
     image: confluentinc/cp-kafka:7.2.15
+    networks:
+      - microservices-net
     depends_on:
       - zookeeper
     ports:
       - '9092:9092'
-    networks:
-      - microservices-net
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -30,12 +30,12 @@ services:
 
   mysql:
     image: mysql:8.0.43
+    networks:
+      - microservices-net
     environment:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    networks:
-      - microservices-net
     ports:
       - "3306:3306"
     volumes:
@@ -45,10 +45,10 @@ services:
 
   auth-service:
     image: wishnu3594/auth-service:1.0.1
-    expose:
-      - "8081"
     networks:
       - microservices-net
+    expose:
+      - "8081"
     environment:
       KAFKA_HOST: kafka
       KAFKA_PORT: 9092
@@ -64,10 +64,10 @@ services:
 
   user-service:
     image: wishnu3594/user-service:1.0.1
-    expose:
-      - "1906"
     networks:
       - microservices-net
+    expose:
+      - "1906"
     environment:
       KAFKA_HOST: kafka
       KAFKA_PORT: 9092
@@ -83,10 +83,10 @@ services:
 
   expense-service:
     image: wishnu3594/expense-service:1.0.1
-    expose:
-      - "2704"
     networks:
       - microservices-net
+    expose:
+      - "2704"
     environment:
       KAFKA_HOST: kafka
       KAFKA_PORT: 9092
@@ -102,10 +102,10 @@ services:
 
   kong:
     image: kong:3.6
-    volumes:
-      - "./kong/kong.yml:/usr/local/kong/declarative/kong.yml"
     networks:
       - microservices-net
+    volumes:
+      - "./kong/kong.yml:/usr/local/kong/declarative/kong.yml"
     environment:
       KONG_DATABASE: off
       KONG_DECLARATIVE_CONFIG: /usr/local/kong/declarative/kong.yml
@@ -128,6 +128,8 @@ services:
 volumes:
   mysql-db:
     driver: local
+
 networks:
   microservices-net:
+    driver: bridge
 
